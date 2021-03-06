@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ti amo Viola</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap" rel="stylesheet">
+        <style>
+.font1 {
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+.font2 {
+    font-family: 'Lovers Quarrel', cursive;
+}
+body {
+    background-color: rgb(97, 57, 186);
+    color: white;
+    text-shadow: 3px 3px 8px white;
+    box-shadow: 10px 10px 100px white inset, -10px -10px 100px white inset;
+    margin: 0px;
+    padding: 50px;
+    
+}
+h1 {
+    font-size: 50px;
+    text-decoration: underline;
+    font-weight: normal;
+    transform: rotate(3deg);
+}
+h3 {
+    font-size: 35px;
+    font-weight: normal;
+}
+b {
+    font-size: 70px;
+    font-weight: normal;
+}
+.box {
+    border: 3px dashed white;
+    border-radius: 20px;
+    padding: 10px;
+    height: 300px;
+    overflow: scroll;
+    text-align: left;
+    width: 280px;
+    
+}
+#center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+h3[class="font1"] {
+    font-size: 20px;
+    transform: rotate(357deg);
+    text-decoration: underline;
+}
+        </style>
+        <script>
+//library:
+//https://code.sololearn.com/WqSj5tGrKxA1/?ref=app
+document.addEventListener('DOMContentLoaded', (e)=>{
+    let gtbsa = new GTBScrollAnimator();
+});
+
+
+
+class GTBScrollAnimator{
+    constructor(){
+        this.elements = Array.from(document.querySelectorAll('[data-scroll-animate]'));
+        this.elements.forEach((e)=>{
+            e.style.opacity = 0;
+            
+            if(e.getAttribute('data-scroll-animate') == "fade-in"){
+                e.style.transform = 'scale(0,0)';
+            }
+            if(e.getAttribute('data-scroll-animate') == "from-left"){
+                e.style.transform = 'scale(0,0) translateX(-100%)';
+            }
+            if(e.getAttribute('data-scroll-animate') == "from-right"){
+                e.style.transform = 'scale(0,0) translateX(100%)';
+            }
+            e.style.transition = "all 0.5s ease";
+        });
+        window.addEventListener('scroll', (e)=>{
+            this.checkElements();
+        });
+        window.requestAnimationFrame(()=>{
+           window.requestAnimationFrame(()=>{
+    this.checkElements();
+});
+});
+        
+    }
+    checkElements(){
+        this.elements = Array.from(document.querySelectorAll('[data-scroll-animate]'));
+        this.elements.forEach((e)=>{
+
+            let elementBottom = e.getBoundingClientRect().top+window.pageYOffset+ 0.5*e.clientHeight;
+            let windowHeight = document.documentElement.clientHeight|| window.innerHeight;
+            let bottomOfPage = window.pageYOffset + windowHeight;
+
+            if((bottomOfPage) >= elementBottom && e.style.opacity == 0){
+                window.requestAnimationFrame(()=>{
+                    window.requestAnimationFrame(()=>{
+                        e.style.opacity = 1;
+
+                        if(e.getAttribute('data-scroll-animate') == "fade-in"){
+                            e.style.transform = 'scale(1,1)';
+                        }
+                        if(e.getAttribute('data-scroll-animate') == "from-left"){
+                            e.style.transform = 'scale(1,1) translateX(0)';
+                        }
+                        if(e.getAttribute('data-scroll-animate') == "from-right"){
+                            e.style.transform = 'scale(1,1) translateX(0)';
+                        }
+                    });
+                });
+            }
+
+            if((bottomOfPage) < elementBottom && e.style.opacity == 1){
+                window.requestAnimationFrame(()=>{
+                    window.requestAnimationFrame(()=>{
+                        e.style.opacity = 0;
+
+                        if(e.getAttribute('data-scroll-animate') == "fade-in"){
+                            e.style.transform = 'scale(0,0)';
+                        }
+                        if(e.getAttribute('data-scroll-animate') == "from-left"){
+                            e.style.transform = 'scale(0,0) translateX(-100%)';
+                        }
+                        if(e.getAttribute('data-scroll-animate') == "from-right"){
+                            e.style.transform = 'scale(0,0) translateX(100%)';
+                        }
+                    });
+                });
+            }
+        });
+    }
+}
+        </script>
+    </head>
+    <body>
+    <br />
+        <div id="center" align="center">
+            <h1 class="font1">Ti amo Viola</h1>
+            <br />
+            <br />
+            <br />
+            <h3 class="font1">Poema:</h3>
+            <h3 class="font2 box" data-scroll-animate="fade-in">
+                Ciao, Viola.
+                <br />
+                Ti dedico questo per ciò che siamo noi due insieme.
+                <br />
+                Non ci siamo ancora incontrati fisicamente, questo è vero, ma io, in questi cinque mesi in cui ci conosciamo non ho mai smesso di amarti più di come io ti abbia mai amata.
+                <br />
+                Come ti amo ora sarà per sempre e spero sia così anche per te, perché tu sei tutto ciò che ho cercato per tutta la mia vita, ciò che mi rafforza, ciò per cui farei qualunque cosa a costo di tenerla intatta.
+                <br />
+                Io ti voglio sempre al mio fianco come voglio che sia in futuro e spero che la divisione non ci raggiunga.
+                <br />
+                Sei meravigliosa, e infatti non è casualmente che ho scelto di amare <b>te</b>, perché sei speciale, e come te non si trova nessun' altra e nessun' altro al mondo, sei unica.
+                <br />
+                Io prometto che ti sarò per sempre fedele, che non ti tradirò e che non vorrò mai farlo, soprattutto perché non te lo meriti, ma meriti di molto meglio.
+            </h3>
+            <br />
+            <br />
+            <br />
+            <h3 class="font1">Complimenti:</h3>
+            <h3 class="font2 box" data-scroll-animate="fade-in">
+                Sei:
+                <br />
+                <ul>
+                    <li>Bellissima</li>
+                    <li>Intelligente</li>
+                    <li>Simpatica</li>
+                    <li>Dolce</li>
+                    <li>Affettuosa</li>
+                    <li>Sincera</li>
+                    <li>Leale</li>
+                    <li>Veloce</li>
+                </ul>
+                <br />
+                Hai:
+                <br />
+                <ul>
+                    <li>Dei meravigliosi gusti</li>
+                    <li>Dei capelli bellissimi</li>
+                    <li>Degli amici che ti vogliono bene</li>
+                    <li>Cose che molte persone non possono permettersi</li>
+                    <li>Me</li>
+                </ul>
+            </h3>
+            <br />
+            <br />
+            <br />
+            <h3 class="font1">Scuse:</h3>
+            <h3 class="font2 box"data-scroll-animate="fade-in">
+                Perdonami se in passato ti ho fatta degli scherzi veramente senza gusto, o se a volte ti ho ferita quando te lo meritavi, o se sono appiccicoso e testardo come sempre ma questo sono io, e pur non piacendomi tanto, posso amare te più di chiunque altro, e mi fa sentire bene.
+            </h3>
+            <br />
+            <br />
+            <br />
+            <h3 class="font1">Promesse:</h3>
+            <h3 class="font2 box" data-scroll-animate="fade-in">data-scroll-animate = "fade-in"
+                Ti prometto che prima o poi verrò da te, e passeremo molto insieme.
+                <br />
+                Se resteremo uniti per più tempo, sono sicuro che mi trasferirò il prima possibile solo per te.
+                <br />
+                Ti prometto che avrai <b>tutte</b> le soddisfacienze che non ti ho mai potuto dare, e lo farò con impegno, con il cuore.
+            </h3>
+        </div>
+    </body>
+</html>
